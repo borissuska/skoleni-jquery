@@ -2,6 +2,7 @@
   "name": "jquery-exercises",
   "dependencies": {},
   "devDependencies": {
+    "body-parser": "^1.9.0",
     "express": "^4.9.0",
     "vhost": "^3.0.0"
   }
