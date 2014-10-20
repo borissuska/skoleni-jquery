@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script>
+        function doSomething(data, successCallback, errorCallback) {
+            setTimeout(function() {
+                successCallback(data + " is ready!");
+            }, 5000);
+        }
+
+        function doSomethingBad(data, successCallback, errorCallback) {
+            setTimeout(function() {
+                errorCallback("I'm sorry, '" + data + "' does not happen...");
+            }, 5000);
+        }
+
+        doSomething("Something", function(msg) {
+            alert(msg);
+            doSomethingBad(msg, function(msg) {
+                // This callback is mandatory even if it is empty
+                // success callback is not used
+            }, function(msg) {
+                alert("Error: " + msg);
+            })
+        }, function(msg) {
+            // This callback is optional
+            // error callback is not used
+        });
+        alert("I'm waiting for something");
+    </script>
+</body>
+</html>

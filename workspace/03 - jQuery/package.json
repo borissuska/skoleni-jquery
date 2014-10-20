@@ -1,0 +1,8 @@
+{
+  "name": "jquery-exercises",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.9.0",
+    "vhost": "^3.0.0"
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script>
+        function doSomething(data) {
+            var deferred = $.Deferred();
+            setTimeout(function() {
+                deferred.resolve(data + " is ready!");
+            }, 5000);
+            return deferred.promise();
+        }
+
+        function doSomethingBad(data) {
+            var deferred = $.Deferred();
+            setTimeout(function() {
+                deferred.reject("I'm sorry, '" + data + "' does not happen...");
+            }, 5000);
+            return deferred.promise();
+        }
+
+        doSomething("Something")
+            .done(function(msg) {
+                alert(msg);
+            })
+            .then(doSomethingBad) // DO NOT CALL FUNCTION - pass just reference instead
+            .fail(function(msg) {
+                alert(msg);
+            });
+        alert("I'm waiting for something");
+    </script>
+</body>
+</html>

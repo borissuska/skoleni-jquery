@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script>
+        var values = [];
+        $.when(
+                $.get('/echo/json/', {json: JSON.stringify({value: 1})}, function(data) {
+                    values.push(data.value);
+                }),
+                $.get('/echo/json/', {json: JSON.stringify({value: 2})}, function(data) {
+                    values.push(data.value);
+                }),
+                $.get('/echo/json/', {json: JSON.stringify({value: 3})}, function(data) {
+                    values.push(data.value);
+                })
+        ).then(function() {
+            alert("values = " + values.join(", "));
+        });
+    </script>
+
+</body>
+</html>

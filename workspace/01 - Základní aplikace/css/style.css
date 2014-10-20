@@ -1,0 +1,10 @@
+body {
+	font: 14px Verdana, sans-serif;
+	padding-left: 10em;
+}
+
+ul {
+	position: fixed;
+	top: 1em;
+	left: 1em;
+}
