@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .col-50 {
+            width: 49%;
+            float: left;
+        }
+        html, body, .height-100 {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="col-50">
+        <div>
+            <h1>Menus</h1>
+            <ul id="m1" class="menu">
+                <li class="item active">Menu 1</li>
+                <li class="item">Menu 2</li>
+                <li class="item">Menu 3</li>
+            </ul>
+            <ul id="m2" class="menu">
+                <li class="item"><a href="http://www.google.com">Google</a></li>
+                <li class="item"><a href="http://www.seznam.cz">Seznam</a></li>
+                <li class="item"><a href="https://www.github.com">Github</a></li>
+            </ul>
+        </div>
+
+
+        <form action="">
+            <div>
+                <label for="name">Jméno:</label> <input id="name" type="text"/>
+            </div>
+            <div>
+                <label for="s">Výběr:</label>
+                <select name="vyber" id="s">
+                    <option value="1">1</option>
+                    <option value="2" selected="selected">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <div>
+                <label>
+                    <input id="ch1" type="checkbox" checked="checked"/> jeden
+                </label>
+                <label>
+                    <input id="ch2" type="checkbox" checked="checked"/> dva
+                </label>
+                <label>
+                    <input id="ch3" type="checkbox"/> tři
+                </label>
+            </div>
+
+            <div>
+                <label>
+                    <input id="r1" name="r" type="radio" checked="checked"/> one
+                </label>
+                <label>
+                    <input id="r2" name="r" type="radio"/> two
+                </label>
+                <label>
+                    <input id="r3" name="r" type="radio"/> three
+                </label>
+            </div>
+        </form>
+    </div>
+    <iframe class="col-50 height-100" src="_md.html?md=selectors.md"></iframe>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('li').css('color', 'red');
+            // vyzkousejte si take
+            // $('div')
+            // $('body div ul li')
+            // $('body > div > ul > li + li')
+            // $('body > div > ul > li + li + li')
+            // $('body > div > ul:first-child > li')
+            // $('body > div > ul:first > li')
+            // $('body > div > ul:eq(0) > li')
+            // $('body > div > ul:last-child > li')
+            // $('body > div > ul:last > li')
+            // $('body > div > ul:eq(1) > li')
+            // $('body > div > ul:eq(1) > li:eq(2)')
+            // $('.menu li.active')
+            // $('.menu li.active').parent()
+            // $('.menu:has(.active)')
+            // $('*[href="http://www.google.com"]')
+            // $('[href^="https://"]')
+            // $('[href$=".com"]')
+            // $('[href*="google"]')
+            // $('form select > option:selected')
+            // $('form select > option[selected]')
+            // $('form input[type=checkbox]:checked')
+            // $('form input[type=checkbox]:not(:checked)')
+            // $('form input[name=r]:checked')
+            // var $menu = $('#m1'); $menu.find('li');
+            // var $menu = $('#m1'); $('li', $menu);
+        });
+    </script>
+
+</body>
+</html>

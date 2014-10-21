@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+    <div id="content"></div>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/markdown/markdown.min.js"></script>
+    <script>
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        $.get(getParameterByName('md')).done(function(content) {
+            $('#content').html(markdown.toHTML(content));
+        })
+    </script>
+</body>
+</html>
