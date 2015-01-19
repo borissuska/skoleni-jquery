@@ -239,21 +239,21 @@ Zadání
 
 1. Přepočítaní parametru `idx`
 
-	moveTo: function(idx) {
-		while (idx < 0 || idx >= this.size) {
-			if (idx < 0) {
-				// -1 => size-1, -2 => size-2, ...
-				idx = this.size + idx; // == this.size - (-idx)
-			} else if (idx >= this.size) {
-				// size+0 => 0, size+1 => 1, ...
-				idx = idx - this.size;
+		moveTo: function(idx) {
+			while (idx < 0 || idx >= this.size) {
+				if (idx < 0) {
+					// -1 => size-1, -2 => size-2, ...
+					idx = this.size + idx; // == this.size - (-idx)
+				} else if (idx >= this.size) {
+					// size+0 => 0, size+1 => 1, ...
+					idx = idx - this.size;
+				}
 			}
-		}
-		
-		// TODO
-		
-		this.current = idx;
-	},
+			
+			// TODO
+			
+			this.current = idx;
+		},
 	
 2. Výpočet `margin-left`
 	
